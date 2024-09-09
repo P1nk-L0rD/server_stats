@@ -30,6 +30,7 @@ print(answer)
 ```
 
 # DEPLOYMENT
+## Installing
 
 ```bash
 git clone https://github.com/P1nk-L0rD/server_stats.git
@@ -54,6 +55,8 @@ Install requirements:
 pip install -r requirements.txt
 ```
 
+## Daemon
+
 Create daemon:
 ```bash
 sudo vim /etc/systemd/system/server_stats.service
@@ -69,6 +72,8 @@ Enable and start daemon:
 sudo systemctl enable server_stats.service
 sudo systemctl start server_stats.service
 ```
+
+## NGINX
 
 Add code to your nginx default (/etc/nginx/sites-enabled/default):
 ```nginx
@@ -98,4 +103,4 @@ Restart nginx:
 systemctl reload nginx
 ```
 
-Ready!
+### Ready!
