@@ -30,7 +30,25 @@ print(answer)
 # DEPLOYMENT
 
 ```bash
-git clone git@github.com:P1nk-L0rD/server_stats.git
+git clone https://github.com/P1nk-L0rD/server_stats.git
+```
+
+Create .env with SERVER_STATS_TOKEN
+
+Download python 3.10 env:
+```bash
+apt install python3.10-venv
+```
+
+Create and activate venv:
+```bash
+python3.10 -m venv venv
+source venv/bin/activate
+```
+
+Install requirements:
+```bash
+pip install -r requirements.txt
 ```
 
 Create daemon:
@@ -56,6 +74,11 @@ location /server_stats/ {
   proxy_pass http://127.0.0.1:8110;
   proxy_set_header Host $host;
 }
+```
+
+Restart nginx:
+```bash
+systemctl reload nginx
 ```
 
 Ready!

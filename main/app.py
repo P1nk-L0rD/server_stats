@@ -8,14 +8,14 @@ from main.stats import get_stats
 app = FastAPI()
 
 
-@app.get("/test")
+@app.get("/test/")
 async def server_test(request: Request):
     if request.headers.get("token") != SERVER_STATS_TOKEN:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
     return {"status": "working"}
 
 
-@app.get("/server_stats", response_model=ServerStats)
+@app.get("/server_stats/", response_model=ServerStats)
 async def get_server_stats(request: Request):
     if request.headers.get("token") != SERVER_STATS_TOKEN:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
