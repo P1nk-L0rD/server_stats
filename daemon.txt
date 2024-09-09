@@ -1,0 +1,13 @@
+[Unit]
+Description=Server_stats on FastAPI
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/server_stats
+ExecStart=/root/server_stats/venv/bin/uvicorn main.app:app --host 127.0.0.1 --port 8110
+Restart=always
+Environment=PATH=/root/server_stats/venv/bin
+
+[Install]
+WantedBy=multi-user.target
