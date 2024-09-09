@@ -1,7 +1,9 @@
 # Server_stats
 
 Simple project to get basic system stats of your server via FastAPI.
+
 Based on psutil, fastapi, pydantic.
+
 
 ## Request example:
 ```python
@@ -42,6 +44,7 @@ apt install python3.10-venv
 
 Create and activate venv:
 ```bash
+cd server_stats/
 python3.10 -m venv venv
 source venv/bin/activate
 ```
@@ -67,13 +70,27 @@ sudo systemctl enable server_stats.service
 sudo systemctl start server_stats.service
 ```
 
-Add code to your nginx default:
+Add code to your nginx default (/etc/nginx/sites-enabled/default):
 ```nginx
 location /server_stats/ {
-  proxy_redirect off;
   proxy_pass http://127.0.0.1:8110;
-  proxy_set_header Host $host;
 }
+```
+
+Full nginx default may look like this:
+```nginx
+server {
+  listen 443;
+  server_name domain.com;
+
+  ssl_certificate      /etc/letsencrypt/live/domain.com/fullchain.pem;
+  ssl_certificate_key  /etc/letsencrypt/live/domain.com/privkey.pem;
+
+  location /server_stats/ {
+    proxy_pass http://127.0.0.1:8110;
+  }
+}
+
 ```
 
 Restart nginx:
