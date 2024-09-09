@@ -1,6 +1,7 @@
-# server_stats
+# Server_stats
 
-Simple project to get basic system stats of your server via fastapi.
+Simple project to get basic system stats of your server via FastAPI.
+Based on psutil, fastapi, pydantic.
 
 ## Request example:
 ```python
