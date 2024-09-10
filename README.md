@@ -40,7 +40,7 @@ Create .env with SERVER_STATS_TOKEN
 
 Download python 3.10 env:
 ```bash
-apt install python3.10-venv
+apt install python3.10-venv -y
 ```
 
 Create and activate venv:
