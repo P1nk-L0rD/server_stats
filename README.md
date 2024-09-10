@@ -36,8 +36,6 @@ print(answer)
 git clone https://github.com/P1nk-L0rD/server_stats.git
 ```
 
-Create .env with SERVER_STATS_TOKEN
-
 Download python 3.10 env:
 ```bash
 apt install python3.10-venv -y
@@ -54,6 +52,9 @@ Install requirements:
 ```bash
 pip install -r requirements.txt
 ```
+
+Create .env with SERVER_STATS_TOKEN
+
 
 ## Daemon
 
@@ -104,3 +105,19 @@ systemctl reload nginx
 ```
 
 ### Ready!
+
+## Extra
+
+To update server:
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+```
+
+To update server_stats:
+```bash
+cd server_stats/
+git pull
+systemctl restart server_stats
+```
