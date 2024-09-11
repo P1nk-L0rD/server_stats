@@ -24,11 +24,12 @@ def get_network_usage():
     net_in = net_in_2 - net_in_1
     net_out = net_out_2 - net_out_1
 
-    return max(net_in, net_out)
+    return net_in, net_out
 
 
 def get_stats() -> ServerStats:
     memory_info = psutil.virtual_memory()
+    net_in, net_out = get_network_usage()
     disc_info = psutil.disk_usage('/')
 
     return ServerStats(
@@ -39,6 +40,7 @@ def get_stats() -> ServerStats:
         memory_percent_usage=memory_info.percent,
         disc_total=disc_info.total,
         disc_percent_usage=disc_info.percent,
-        current_network_usage=get_network_usage(),
+        network_download_speed=net_in,
+        network_upload_speed=net_out,
         boot_time=BOOT_TIME,
     )

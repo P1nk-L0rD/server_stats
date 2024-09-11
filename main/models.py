@@ -11,5 +11,6 @@ class ServerStats(BaseModel):
     memory_percent_usage: Optional[float] = None
     disc_total: Optional[int] = None
     disc_percent_usage: Optional[float] = None
-    current_network_usage: Optional[int] = None
+    network_download_speed: Optional[int] = None
+    network_upload_speed: Optional[int] = None
     boot_time: Optional[float] = None

@@ -54,7 +54,12 @@ pip install -r requirements.txt
 ```
 
 Create .env with SERVER_STATS_TOKEN
+```bash
+touch .env
+vim .env
+```
 
+!!! Important: If you do not create .env, stats will be available without a token.
 
 ## Daemon
 
@@ -121,3 +126,5 @@ cd server_stats/
 git pull
 systemctl restart server_stats
 ```
+
+To use without nginx, via port replace 127.0.0.1 -> 0.0.0.0 in daemon.
