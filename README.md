@@ -10,7 +10,7 @@ Based on psutil, fastapi, pydantic.
 import requests
 
 headers = {"token": "your_secret_token"}
-answer = requests.get("domain.com/server_stats", headers=headers)
+answer = requests.get("domain.com/server_stats/", headers=headers)
 print(answer)
 ```
 
@@ -67,6 +67,8 @@ Create daemon:
 ```bash
 sudo vim /etc/systemd/system/server_stats.service
 ```
+
+Copy daemon.txt to created file. Save it and exit.
 
 Reload daemon service:
 ```bash

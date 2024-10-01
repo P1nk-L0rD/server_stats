@@ -34,8 +34,8 @@ def get_stats() -> ServerStats:
 
     return ServerStats(
         cpu_cores=CPU_CORES,
-        cpu_current_usage=psutil.cpu_percent(interval=0.1),
-        cpu_average_usage=[x / CPU_CORES * 100 for x in psutil.getloadavg()][1],
+        cpu_current_usage=psutil.cpu_percent(interval=0.1), # Usage at the moment
+        cpu_average_usage=[x / CPU_CORES * 100 for x in psutil.getloadavg()][1], # For the last 5 minutes
         memory_total=memory_info.total,
         memory_percent_usage=memory_info.percent,
         disc_total=disc_info.total,
