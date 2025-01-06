@@ -32,7 +32,16 @@ print(answer)
 
 # DEPLOYMENT
 
-## Installing
+## Installing via docker (recommended)
+
+```bash
+git clone https://github.com/P1nk-L0rD/server_stats.git
+cd server_stats
+echo "SERVER_STATS_TOKEN=TOKEN" > .env
+docker-compose up -d
+```
+
+## Installing via commands
 
 ```bash
 git clone https://github.com/P1nk-L0rD/server_stats.git
