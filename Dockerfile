@@ -1,10 +1,12 @@
 # Используем официальный Python образ версии 3.10
 FROM python:3.10-slim
 
+RUN sudo apt-get update && sudo apt-get upgrade
+
 # Устанавливаем рабочую директорию в контейнере
 WORKDIR /app
 
-# Копируем зависимости (например, requirements.txt) в контейнер
+# Копируем зависимости в контейнер
 COPY requirements.txt .
 
 # Устанавливаем зависимости
