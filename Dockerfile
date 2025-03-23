@@ -1,7 +1,7 @@
 # Используем официальный Python образ версии 3.10
 FROM python:3.10-slim
 
-RUN sudo apt-get update && sudo apt-get upgrade
+RUN apt-get update && apt-get upgrade -y
 
 # Устанавливаем рабочую директорию в контейнере
 WORKDIR /app
